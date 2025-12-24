@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Triangle - Red Border -->
+  <path d="M50 10 L90 85 L10 85 Z" fill="#FFFFFF"/>
+  <path d="M50 10 L90 85 L10 85 Z" fill="none" stroke="#DC2626" stroke-width="6"/>
+  <!-- Inner white triangle -->
+  <path d="M50 18 L82 80 L18 80 Z" fill="#FFFFFF"/>
+  <!-- Pedestrian symbol -->
+  <circle cx="50" cy="40" r="6" fill="#000000"/>
+  <path d="M50 48 L50 60 M45 52 L55 52 M50 60 L45 72 M50 60 L55 72" stroke="#000000" stroke-width="3" fill="none" stroke-linecap="round"/>
+</svg>

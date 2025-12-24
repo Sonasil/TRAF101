@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Red Octagon Background -->
+  <path d="M30 0 L70 0 L100 30 L100 70 L70 100 L30 100 L0 70 L0 30 Z" fill="#DC2626"/>
+  <!-- White Border -->
+  <path d="M30 5 L70 5 L95 30 L95 70 L70 95 L30 95 L5 70 L5 30 Z" fill="none" stroke="#FFFFFF" stroke-width="3"/>
+  <!-- Inner Red Octagon -->
+  <path d="M32 8 L68 8 L92 32 L92 68 L68 92 L32 92 L8 68 L8 32 Z" fill="#DC2626"/>
+  <!-- STOP Text -->
+  <text x="50" y="58" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#FFFFFF" text-anchor="middle">STOP</text>
+</svg>

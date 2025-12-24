@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Inverted Triangle - Red Border -->
+  <path d="M50 95 L5 5 L95 5 Z" fill="#FFFFFF"/>
+  <path d="M50 95 L 5 5 L95 5 Z" fill="none" stroke="#DC2626" stroke-width="6"/>
+  <!-- Inner White Triangle -->
+  <path d="M50 88 L13 10 L87 10 Z" fill="#FFFFFF"/>
+</svg>

@@ -1,30 +1,76 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+import { RouterView, RouterLink } from 'vue-router';
 </script>
 
 <template>
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <div class="app-container">
+    <header class="app-header">
+      <nav class="nav-container">
+        <RouterLink to="/" class="logo">TRNC Driving Safety</RouterLink>
+        <div class="nav-links">
+          <RouterLink to="/history">History</RouterLink>
+        </div>
+      </nav>
+    </header>
+
+    <main class="main-content">
+      <RouterView />
+    </main>
+
+    <footer class="app-footer">
+      <p>&copy; 2024 Traffic Safety TRNC. Drive Safely.</p>
+    </footer>
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
 
-<style scoped>
+<style>
+/* Scoped styles or global overrides if needed, but relying on global CSS mostly */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-header {
+  background-color: #2c3e50;
+  color: white;
+  padding: 1rem;
+}
+
+.nav-container {
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: white;
+  text-decoration: none;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+
+.nav-links a {
+  color: #ecf0f1;
+  text-decoration: none;
 }
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+.main-content {
+  flex: 1;
+  width: 100%;
+  /* REMOVED max-width and centering to allow FULL-WIDTH pages */
+}
+
+.app-footer {
+  text-align: center;
+  padding: 1rem;
+  background: #f8f9fa;
+  font-size: 0.9rem;
+  color: #6c757d;
 }
 </style>
