@@ -14,7 +14,7 @@ export const questions = [
         ],
         correctOptionIds: ['o1'],
         explanation: 'A red octagon always means STOP. You must come to a complete halt.',
-        image: 'stop_sign'
+        image: '/signs/priority/stop.svg'
     },
     {
         id: 's2',
@@ -29,7 +29,8 @@ export const questions = [
             { id: 'o4', text: 'Mandatory' }
         ],
         correctOptionIds: ['o2'],
-        explanation: 'Triangular signs with red borders are warning signs.'
+        explanation: 'Triangular signs with red borders are warning signs.',
+        image: '/signs/warning/children.svg'
     },
     {
         id: 's3',
@@ -44,7 +45,8 @@ export const questions = [
             { id: 'o4', text: 'A tourist attraction' }
         ],
         correctOptionIds: ['o3'],
-        explanation: 'Blue circles usually indicate mandatory actions, like "turn left".'
+        explanation: 'Blue circles usually indicate mandatory actions, like "turn left".',
+        image: '/signs/mandatory/ahead-only.svg'
     },
     {
         id: 's4',
@@ -59,7 +61,8 @@ export const questions = [
             { id: 'o4', text: 'Route confirmation' }
         ],
         correctOptionIds: ['o1'],
-        explanation: 'Red circles indicate prohibitions, e.g., No Left Turn.'
+        explanation: 'Red circles indicate prohibitions, e.g., No Left Turn.',
+        image: '/signs/prohibitory/speed-50.svg'
     },
     {
         id: 's5',
@@ -74,7 +77,8 @@ export const questions = [
             { id: 'o4', text: 'Rest area' }
         ],
         correctOptionIds: ['o2'],
-        explanation: 'Diamond signs are typically used for warnings or construction zones.'
+        explanation: 'Diamond signs are typically used for warnings or construction zones.',
+        image: '/signs/warning/dangerous-bend.svg'
     },
     {
         id: 's6',
@@ -89,7 +93,8 @@ export const questions = [
             { id: 'o4', text: 'Weigh station ahead' }
         ],
         correctOptionIds: ['o2'],
-        explanation: 'A red slash or line through a symbol means that action or vehicle is prohibited.'
+        explanation: 'A red slash or line through a symbol means that action or vehicle is prohibited.',
+        image: '/signs/prohibitory/no-entry.svg'
     },
     {
         id: 's7',
@@ -104,7 +109,8 @@ export const questions = [
             { id: 'o4', text: 'Dead end' }
         ],
         correctOptionIds: ['o2'],
-        explanation: 'The inverted triangle is universally the Yield or Give Way sign.'
+        explanation: 'The inverted triangle is universally the Yield or Give Way sign.',
+        image: '/signs/priority/give-way.svg'
     },
     {
         id: 's8',
@@ -119,7 +125,8 @@ export const questions = [
             { id: 'o4', text: 'End of restriction' }
         ],
         correctOptionIds: ['o2'],
-        explanation: 'This specific sign is for "No Entry" for vehicular traffic.'
+        explanation: 'This specific sign is for "No Entry" for vehicular traffic.',
+        image: '/signs/prohibitory/no-entry.svg'
     },
 
     // SPEED LIMITS (8)

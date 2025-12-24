@@ -64,9 +64,9 @@ const router = useRouter();
             <h3>A1 License</h3>
             <p class="license-desc">Motorcycles up to 125cc</p>
             <div class="license-meta">
-              <span>30 Questions</span>
+              <span>20 Questions</span>
               <span>•</span>
-              <span>45 Min</span>
+              <span>30 Min</span>
             </div>
             <button class="btn btn-secondary">Start Test</button>
           </div>
@@ -77,9 +77,9 @@ const router = useRouter();
             <h3>B License</h3>
             <p class="license-desc">Private cars & light vehicles</p>
             <div class="license-meta">
-              <span>35 Questions</span>
+              <span>20 Questions</span>
               <span>•</span>
-              <span>50 Min</span>
+              <span>30 Min</span>
             </div>
             <button class="btn btn-primary">Start Test</button>
           </div>
@@ -89,9 +89,9 @@ const router = useRouter();
             <h3>C License</h3>
             <p class="license-desc">Heavy goods vehicles</p>
             <div class="license-meta">
-              <span>40 Questions</span>
+              <span>20 Questions</span>
               <span>•</span>
-              <span>60 Min</span>
+              <span>30 Min</span>
             </div>
             <button class="btn btn-secondary">Start Test</button>
           </div>

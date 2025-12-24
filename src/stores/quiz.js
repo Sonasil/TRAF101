@@ -40,11 +40,25 @@ export const useQuizStore = defineStore('quiz', {
             this.startTime = Date.now();
 
             // Filter questions relevant to the license type
-            // And Shuffle them (simple random sort)
-            this.questions = allQuestions
-                .filter(q => q.licenseTypeIds.includes(licenseType))
-                .sort(() => Math.random() - 0.5)
-                .slice(0, QUIZ_CONFIG.QUESTIONS_PER_TEST);
+            const relevantQuestions = allQuestions
+                .filter(q => q.licenseTypeIds.includes(licenseType));
+
+            // Separate sign questions from other questions
+            const signQuestions = relevantQuestions
+                .filter(q => q.category === 'Signs')
+                .sort(() => Math.random() - 0.5);
+
+            const otherQuestions = relevantQuestions
+                .filter(q => q.category !== 'Signs')
+                .sort(() => Math.random() - 0.5);
+
+            // Select 8 sign questions and 12 other questions
+            const selectedSignQuestions = signQuestions.slice(0, 8);
+            const selectedOtherQuestions = otherQuestions.slice(0, 12);
+
+            // Combine and shuffle all selected questions
+            this.questions = [...selectedSignQuestions, ...selectedOtherQuestions]
+                .sort(() => Math.random() - 0.5);
         },
 
         submitAnswer(optionId) {

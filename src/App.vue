@@ -26,7 +26,7 @@ const route = useRoute();
     </main>
 
     <footer class="app-footer">
-      <p>&copy; 2024 TRNC Driving Safety. Drive Safely.</p>
+      <p>&copy; 2025 TRNC Driving Safety. Drive Safely.</p>
     </footer>
   </div>
 </template>
