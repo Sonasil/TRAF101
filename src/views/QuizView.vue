@@ -43,6 +43,11 @@ const handleOptionSelect = (optionId) => {
       <div class="category-tag">{{ currentQuestion.category }}</div>
       <h2 class="question-text">{{ currentQuestion.prompt }}</h2>
 
+      <!-- Traffic Sign Image -->
+      <div v-if="currentQuestion.image" class="sign-image-container">
+        <img :src="currentQuestion.image" :alt="`Traffic sign`" class="sign-image" />
+      </div>
+
       <div class="options-grid">
         <button 
           v-for="option in currentQuestion.options" 
@@ -121,6 +126,24 @@ const handleOptionSelect = (optionId) => {
   font-size: 1.375rem;
   margin-bottom: 1.5rem;
   line-height: 1.5;
+}
+
+.sign-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: var(--color-bg-light);
+  border-radius: var(--radius-lg);
+}
+
+.sign-image {
+  max-width: 200px;
+  max-height: 200px;
+  width: auto;
+  height: auto;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.1));
 }
 
 .options-grid {
