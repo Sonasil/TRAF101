@@ -15,7 +15,7 @@ const emit = defineEmits(['select']);
 
 <template>
   <div 
-    class="license-card" 
+    class="license-card card" 
     :class="{ 'is-selected': selected }"
     @click="emit('select', license.id)"
   >
@@ -26,23 +26,38 @@ const emit = defineEmits(['select']);
 
 <style scoped>
 .license-card {
-  border: 1px solid #ddd;
-  padding: 1rem;
-  border-radius: 8px;
   cursor: pointer;
-  transition: all 0.2s;
-  background: white;
+  padding: var(--spacing-xl);
+  transition: all var(--transition-base);
 }
 
 .license-card:hover {
-  border-color: #3498db;
+  border-color: var(--color-primary);
   transform: translateY(-2px);
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: var(--shadow-lg);
 }
 
 .license-card.is-selected {
-  border-color: #3498db;
-  background-color: #ebf5fb;
-  box-shadow: 0 0 0 2px #3498db inset;
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+  color: white;
+  box-shadow: var(--shadow-xl);
+}
+
+.license-card.is-selected h3,
+.license-card.is-selected p {
+  color: white;
+}
+
+.license-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text);
+}
+
+.license-card p {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  margin: 0;
 }
 </style>

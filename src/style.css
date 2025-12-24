@@ -71,6 +71,25 @@
   --spacing-2xl: 3rem;
   --spacing-3xl: 4rem;
 
+  /* Additional Color Variables */
+  --color-bg-light: #FFFFFF;
+  --color-bg-dim: #E2E8F0;
+
+  /* Glass Effect */
+  --glass-bg: rgba(255, 255, 255, 0.9);
+  --glass-border: rgba(226, 232, 240, 0.8);
+
+  /* Font Sizes */
+  --font-size-lg: 1.125rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+
+  /* Additional Gradients */
+  --gradient-secondary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+  /* Border Radius Full */
+  --radius-full: 9999px;
+
   /* Transitions */
   --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);

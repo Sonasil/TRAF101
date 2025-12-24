@@ -3,6 +3,8 @@ import { computed, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 import { useQuizStore } from '../stores/quiz';
 
+const PASSING_SCORE_PERCENTAGE = 70;
+
 const store = useQuizStore();
 const router = useRouter();
 
@@ -16,8 +18,8 @@ const score = computed(() => store.score);
 const percentage = computed(() => Math.round((store.score / store.totalQuestions) * 100));
 const passed = computed(() => {
   if (store.totalQuestions === 0) return false;
-  return percentage.value >= 70
-}); // 70% passing grade
+  return percentage.value >= PASSING_SCORE_PERCENTAGE;
+});
 
 const incorrectAnswers = computed(() => {
 

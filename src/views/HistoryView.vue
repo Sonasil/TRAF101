@@ -1,85 +1,99 @@
 <script setup>
-import { onMounted } from 'vue';
-import { useRouter } from 'vue-router';
-import { useQuizStore } from '../stores/quiz';
-
-const router = useRouter();
-const store = useQuizStore();
-
-onMounted(() => {
-    store.init();
-});
-
-function formatDate(iso) {
-    if (!iso) return '-';
-    return new Date(iso).toLocaleString();
-}
-
-function viewResult(attemptId) {
-    router.push({ name: 'results', query: { attemptId } });
-}
+import { RouterLink } from 'vue-router';
 </script>
 
 <template>
   <div class="history-view">
-    <h1>Past Results</h1>
-    
-    <div v-if="store.completedAttempts.length === 0" class="empty">
-      No history found. <RouterLink to="/select-license">Take a test</RouterLink>.
-    </div>
-    
-    <div v-else class="history-list">
-      <div 
-        v-for="attempt in store.completedAttempts" 
-        :key="attempt.attemptId" 
-        class="history-item"
-        @click="viewResult(attempt.attemptId)"
-      >
-        <div class="info">
-            <span class="date">{{ formatDate(attempt.finishedAt) }}</span>
-            <span class="license">License: {{ attempt.licenseTypeId }}</span>
-        </div>
-        <div class="score" :class="attempt.score.passed ? 'pass' : 'fail'">
-            {{ attempt.score.percentage }}%
+    <div class="container">
+      <div class="header-section">
+        <h1>Test History</h1>
+        <p class="subtitle">Track your progress and review past performance</p>
+      </div>
+
+      <div class="empty-state">
+        <div class="empty-icon">📊</div>
+        <h2>No History Yet</h2>
+        <p>Take your first practice test to start tracking your progress!</p>
+        <div class="action-buttons">
+          <RouterLink to="/quiz" class="btn btn-primary">Start Practice Test</RouterLink>
+          <RouterLink to="/" class="btn btn-secondary">Back to Home</RouterLink>
         </div>
       </div>
-    </div>
-    
-    <div class="back-link">
-        <RouterLink to="/">Back Home</RouterLink>
     </div>
   </div>
 </template>
 
 <style scoped>
 .history-view {
-    padding: 1rem;
+  min-height: 80vh;
+  background: var(--color-bg);
+  padding: var(--spacing-3xl) var(--spacing-md);
 }
-.history-list {
-    display: flex;
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header-section {
+  text-align: center;
+  margin-bottom: var(--spacing-3xl);
+}
+
+.header-section h1 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  color: var(--color-text);
+  margin-bottom: var(--spacing-md);
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: var(--color-text-secondary);
+}
+
+.empty-state {
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  padding: var(--spacing-3xl);
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.empty-icon {
+  font-size: 5rem;
+  margin-bottom: var(--spacing-lg);
+  opacity: 0.6;
+}
+
+.empty-state h2 {
+  font-size: 2rem;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-md);
+}
+
+.empty-state p {
+  font-size: 1.125rem;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-2xl);
+}
+
+.action-buttons {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 640px) {
+  .action-buttons {
     flex-direction: column;
-    gap: 1rem;
+  }
+  
+  .action-buttons .btn {
+    width: 100%;
+  }
 }
-.history-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    background: white;
-    border: 1px solid #eee;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.2s;
-}
-.history-item:hover {
-    background: #f8f9fa;
-}
-.score {
-    font-size: 1.2rem;
-    font-weight: bold;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-}
-.score.pass { color: #27ae60; background: #eafrd0; } /* Typo in bg color ignored, utility mostly */
-.score.fail { color: #c0392b; }
 </style>

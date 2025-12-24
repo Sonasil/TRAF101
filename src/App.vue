@@ -24,7 +24,6 @@ import { RouterView, RouterLink } from 'vue-router';
 </template>
 
 <style>
-/* Scoped styles or global overrides if needed, but relying on global CSS mostly */
 .app-container {
   display: flex;
   flex-direction: column;
@@ -63,7 +62,6 @@ import { RouterView, RouterLink } from 'vue-router';
 .main-content {
   flex: 1;
   width: 100%;
-  /* REMOVED max-width and centering to allow FULL-WIDTH pages */
 }
 
 .app-footer {

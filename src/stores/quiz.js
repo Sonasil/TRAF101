@@ -1,6 +1,12 @@
 import { defineStore } from 'pinia';
 import { questions as allQuestions } from '../data/questions';
 
+// Quiz Configuration
+const QUIZ_CONFIG = {
+    QUESTIONS_PER_TEST: 20,
+    PASSING_SCORE_PERCENTAGE: 70
+};
+
 export const useQuizStore = defineStore('quiz', {
     state: () => ({
         licenseType: null,
@@ -38,7 +44,7 @@ export const useQuizStore = defineStore('quiz', {
             this.questions = allQuestions
                 .filter(q => q.licenseTypeIds.includes(licenseType))
                 .sort(() => Math.random() - 0.5)
-                .slice(0, 20); // Limit to 20 questions for a standard test session
+                .slice(0, QUIZ_CONFIG.QUESTIONS_PER_TEST);
         },
 
         submitAnswer(optionId) {
