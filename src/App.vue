@@ -15,6 +15,7 @@ const route = useRoute();
         <div class="nav-links">
           <RouterLink to="/" :class="{ active: route.path === '/' }">Home</RouterLink>
           <RouterLink to="/study" :class="{ active: route.path.startsWith('/study') }">Study</RouterLink>
+          <RouterLink to="/scenarios" :class="{ active: route.path === '/scenarios' }">Scenarios</RouterLink>
           <RouterLink to="/history" :class="{ active: route.path === '/history' }">History</RouterLink>
         </div>
       </nav>
@@ -25,7 +26,24 @@ const route = useRoute();
     </main>
 
     <footer class="app-footer">
-      <p>&copy; 2025 TRNC Driving Safety. Drive Safely.</p>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Developed by</h4>
+          <p>Asil Türkmen (21330934)</p>
+          <p>Arda Günsüren (21330887)</p>
+        </div>
+        <div class="footer-section footer-logo">
+          <img src="/emu-logo.png" alt="Eastern Mediterranean University" class="university-logo" />
+        </div>
+        <div class="footer-section">
+          <h4>Course Information</h4>
+          <p>TRAF101 - Traffic Safety</p>
+          <p>Instructor: Assoc.Prof.Dr Metin Kurt</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Test2Drive. Practice. Evaluate. Drive Safe.</p>
+      </div>
     </footer>
   </div>
 </template>
@@ -145,6 +163,54 @@ const route = useRoute();
   font-size: 0.875rem;
   color: var(--color-text-muted);
   border-top: 1px solid var(--color-border-light);
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  text-align: center;
+}
+
+.footer-section h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.footer-section p {
+  font-size: 0.9375rem;
+  color: var(--color-text-secondary);
+  margin: 0.5rem 0;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.university-logo {
+  height: 100px;
+  width: auto;
+  object-fit: contain;
 }
 
 /* Responsive */

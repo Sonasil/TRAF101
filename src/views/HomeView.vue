@@ -8,64 +8,24 @@ const router = useRouter();
   <div class="home">
     <!-- Enhanced Modern Hero -->
     <section class="hero-split full-bleed">
-      <!-- Animated Background -->
-      <div class="hero-bg-animated">
-        <div class="bg-gradient-1"></div>
-        <div class="bg-gradient-2"></div>
-        <div class="bg-gradient-3"></div>
-      </div>
-      
-      <!-- Floating Shapes -->
-      <div class="floating-shapes">
-        <div class="shape shape-1"></div>
-        <div class="shape shape-2"></div>
-        <div class="shape shape-3"></div>
-        <div class="shape shape-4"></div>
-        <div class="shape shape-5"></div>
-      </div>
+      <!-- Simple Background Pattern -->
+      <div class="hero-pattern"></div>
       
       <div class="hero-grid section-padding">
         <div class="hero-content">
           <div class="hero-badge">
             <span class="badge-icon">🚗</span>
-            <span>Test2Drive Official Platform</span>
+            <span>Practice. Evaluate. Drive Safe.</span>
           </div>
           
-          <h1 class="hero-title">
-            <span class="title-word">Practice.</span>
-            <span class="title-word">Evaluate.</span>
-            <span class="title-word gradient-text">Drive Safe.</span>
-          </h1>
+          <h1 class="hero-title">Practice. Evaluate. Drive Safe.</h1>
           
           <p class="hero-desc">
             Complete digital learning platform for TRNC traffic rules and signs. 
             Interactive lessons, practice tests, and everything you need to excel.
           </p>
           
-          <!-- Quick Stats -->
-          <div class="hero-stats">
-            <div class="stat-badge">
-              <div class="stat-icon">📚</div>
-              <div class="stat-content">
-                <div class="stat-number">144+</div>
-                <div class="stat-label">Signs</div>
-              </div>
-            </div>
-            <div class="stat-badge">
-              <div class="stat-icon">✅</div>
-              <div class="stat-content">
-                <div class="stat-number">94%</div>
-                <div class="stat-label">Pass Rate</div>
-              </div>
-            </div>
-            <div class="stat-badge">
-              <div class="stat-icon">🎯</div>
-              <div class="stat-content">
-                <div class="stat-number">100%</div>
-                <div class="stat-label">Free</div>
-              </div>
-            </div>
-          </div>
+
           
           <div class="hero-actions">
             <button class="btn btn-primary btn-large btn-glow" @click="router.push('/study')">
@@ -105,6 +65,67 @@ const router = useRouter();
               <div class="card-icon">🔺</div>
               <span class="card-title">Priority</span>
               <span class="card-count">8 Signs</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scenario Quiz Preview -->
+    <section class="scenario-preview full-bleed">
+      <div class="section-padding">
+        <div class="section-header">
+          <h2>🎬 Try a Real Situation</h2>
+          <p>Test your decision-making skills in realistic driving scenarios</p>
+        </div>
+        
+        <div class="scenario-container">
+          <div class="scenario-card">
+            <div class="scenario-badge">Sample Scenario</div>
+            <div class="scenario-image">
+              <div class="scenario-icon">🚸</div>
+            </div>
+            <h3>School Zone Situation</h3>
+            <p class="scenario-text">
+              You're driving at 50 km/h when you notice a school zone sign. 
+              Children are playing near the road. What should you do?
+            </p>
+            
+            <div class="scenario-choices">
+              <button class="choice-btn">
+                <span class="choice-letter">A</span>
+                <span class="choice-text">Maintain current speed if no children are crossing</span>
+              </button>
+              <button class="choice-btn choice-correct">
+                <span class="choice-letter">B</span>
+                <span class="choice-text">Slow down to 30 km/h and stay alert</span>
+              </button>
+              <button class="choice-btn">
+                <span class="choice-letter">C</span>
+                <span class="choice-text">Honk to warn children and continue</span>
+              </button>
+            </div>
+            
+            <button class="btn btn-primary btn-large scenario-cta" @click="router.push('/scenarios')">
+              <span>Start Scenario Practice</span>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </button>
+          </div>
+          
+          <div class="scenario-stats">
+            <div class="stat-item">
+              <div class="stat-value">30+</div>
+              <div class="stat-text">Real Scenarios</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">5</div>
+              <div class="stat-text">Categories</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">100%</div>
+              <div class="stat-text">Practical</div>
             </div>
           </div>
         </div>
@@ -275,125 +296,30 @@ const router = useRouter();
 </template>
 
 <style scoped>
-/* Hero Split - Enhanced */
+/* Hero Split - Simplified */
 .hero-split {
   position: relative;
   background: var(--gradient-hero);
   color: white;
-  padding: 6rem 1.5rem 5rem;
-  min-height: 90vh;
+  padding: 5rem 1.5rem 4rem;
+  min-height: 75vh;
   display: flex;
   align-items: center;
   overflow: hidden;
 }
 
-/* Animated Background Gradients */
-.hero-bg-animated {
+/* Simple Background Pattern */
+.hero-pattern {
   position: absolute;
   inset: 0;
-  overflow: hidden;
-  opacity: 0.6;
-}
-
-.bg-gradient-1,
-.bg-gradient-2,
-.bg-gradient-3 {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);
-  animation: float 20s ease-in-out infinite;
-}
-
-.bg-gradient-1 {
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(94, 147, 147, 0.4) 0%, transparent 70%);
-  top: -10%;
-  left: -10%;
-  animation-delay: 0s;
-}
-
-.bg-gradient-2 {
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(0, 137, 123, 0.3) 0%, transparent 70%);
-  bottom: -5%;
-  right: -5%;
-  animation-delay: 7s;
-}
-
-.bg-gradient-3 {
-  width: 350px;
-  height: 350px;
-  background: radial-gradient(circle, rgba(137, 182, 182, 0.35) 0%, transparent 70%);
-  top: 40%;
-  left: 50%;
-  animation-delay: 14s;
-}
-
-@keyframes float {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(30px, -30px) scale(1.1); }
-  66% { transform: translate(-20px, 20px) scale(0.9); }
-}
-
-/* Floating Shapes */
-.floating-shapes {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
-.shape {
-  position: absolute;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-  animation: floatShape 15s ease-in-out infinite;
-}
-
-.shape-1 {
-  width: 80px;
-  height: 80px;
-  top: 20%;
-  left: 10%;
-  animation-delay: 0s;
-}
-
-.shape-2 {
-  width: 60px;
-  height: 60px;
-  top: 60%;
-  right: 15%;
-  animation-delay: 3s;
-}
-
-.shape-3 {
-  width: 100px;
-  height: 100px;
-  bottom: 15%;
-  left: 20%;
-  animation-delay: 6s;
-}
-
-.shape-4 {
-  width: 50px;
-  height: 50px;
-  top: 30%;
-  right: 25%;
-  animation-delay: 9s;
-}
-
-.shape-5 {
-  width: 70px;
-  height: 70px;
-  bottom: 30%;
-  right: 10%;
-  animation-delay: 12s;
-}
-
-@keyframes floatShape {
-  0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.3; }
-  50% { transform: translateY(-30px) rotate(180deg); opacity: 0.6; }
+  background-image: 
+    linear-gradient(30deg, rgba(255, 255, 255, 0.03) 12%, transparent 12.5%, transparent 87%, rgba(255, 255, 255, 0.03) 87.5%, rgba(255, 255, 255, 0.03)),
+    linear-gradient(150deg, rgba(255, 255, 255, 0.03) 12%, transparent 12.5%, transparent 87%, rgba(255, 255, 255, 0.03) 87.5%, rgba(255, 255, 255, 0.03)),
+    linear-gradient(30deg, rgba(255, 255, 255, 0.03) 12%, transparent 12.5%, transparent 87%, rgba(255, 255, 255, 0.03) 87.5%, rgba(255, 255, 255, 0.03)),
+    linear-gradient(150deg, rgba(255, 255, 255, 0.03) 12%, transparent 12.5%, transparent 87%, rgba(255, 255, 255, 0.03) 87.5%, rgba(255, 255, 255, 0.03));
+  background-size: 80px 140px;
+  background-position: 0 0, 0 0, 40px 70px, 40px 70px;
+  opacity: 0.4;
 }
 
 .hero-grid {
@@ -763,17 +689,20 @@ const router = useRouter();
 
 .popular-badge {
   position: absolute;
-  top: -14px;
+  top: -12px;
   left: 50%;
   transform: translateX(-50%);
-  background: var(--gradient-warm);
+  background: #F59E0B;
   color: white;
-  padding: 0.5rem 1.5rem;
+  padding: 0.5rem 1.25rem;
   border-radius: 50px;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   font-weight: 700;
-  box-shadow: var(--shadow-md);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.25);
 }
+
 
 .license-icon {
   font-size: 3.5rem;
@@ -912,4 +841,193 @@ const router = useRouter();
   letter-spacing: 0.1em;
   font-weight: 600;
 }
+
+/* Scenario Preview Section */
+.scenario-preview {
+  padding: 4rem 1.5rem;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e8f0f5 100%);
+}
+
+.scenario-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.scenario-card {
+  background: white;
+  border-radius: var(--radius-2xl);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-xl);
+  position: relative;
+}
+
+.scenario-badge {
+  position: absolute;
+  top: -12px;
+  left: 2.5rem;
+  background: var(--gradient-primary);
+  color: white;
+  padding: 0.5rem 1.25rem;
+  border-radius: 50px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  box-shadow: var(--shadow-md);
+}
+
+.scenario-image {
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(135deg, var(--color-primary-lighter) 0%, var(--color-primary-light) 100%);
+  border-radius: var(--radius-xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.scenario-icon {
+  font-size: 5rem;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.2));
+}
+
+.scenario-card h3 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  color: var(--color-text);
+}
+
+.scenario-text {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+  margin-bottom: 2rem;
+}
+
+.scenario-choices {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.choice-btn {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--color-bg);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  text-align: left;
+}
+
+.choice-btn:hover {
+  border-color: var(--color-primary);
+  background: var(--color-bg-light);
+  transform: translateX(4px);
+}
+
+.choice-btn.choice-correct {
+  border-color: #10B981;
+  background: rgba(16, 185, 129, 0.05);
+}
+
+.choice-btn.choice-correct .choice-letter {
+  background: #10B981;
+}
+
+.choice-letter {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  background: var(--color-primary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+
+.choice-text {
+  flex: 1;
+  font-size: 1rem;
+  color: var(--color-text);
+}
+
+.scenario-cta {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.scenario-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.stat-item {
+  background: white;
+  padding: 2rem 1.5rem;
+  border-radius: var(--radius-xl);
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+  transition: all var(--transition-base);
+}
+
+.stat-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-2xl);
+}
+
+.stat-value {
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--color-primary);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.stat-text {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  font-weight: 600;
+}
+
+/* Remove old hero-stats styles */
+.hero-stats {
+  display: none;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .scenario-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .scenario-stats {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 640px) {
+  .scenario-stats {
+    flex-direction: column;
+  }
+  
+  .choice-btn {
+    padding: 1rem 1.25rem;
+  }
+}
+
 </style>

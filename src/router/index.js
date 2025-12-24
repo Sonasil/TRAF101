@@ -4,6 +4,7 @@ import QuizView from '../views/QuizView.vue'
 import ResultView from '../views/ResultView.vue'
 import StudyHubView from '../views/StudyHubView.vue'
 import StudyTopicView from '../views/StudyTopicView.vue'
+import ScenarioQuizView from '../views/ScenarioQuizView.vue'
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -37,6 +38,11 @@ const router = createRouter({
             path: '/results',
             name: 'Results',
             component: ResultView,
+        },
+        {
+            path: '/scenarios',
+            name: 'Scenarios',
+            component: ScenarioQuizView,
         },
         {
             path: '/history',
