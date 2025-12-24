@@ -12,10 +12,10 @@ const router = useRouter();
         <div class="hero-content">
           <div class="hero-badge">
             <span class="badge-icon">🚗</span>
-            <span>TRNC Official Driving Platform</span>
+            <span>Test2Drive Official Platform</span>
           </div>
           
-          <h1>Master Driving in Northern Cyprus</h1>
+          <h1>Practice. Evaluate. Drive Safe.</h1>
           
           <p class="hero-desc">
             Complete digital learning platform for TRNC traffic rules and signs. 
@@ -48,74 +48,7 @@ const router = useRouter();
       </div>
     </section>
 
-    <!-- Stats Band - Full Width -->
-    <section class="stats-band full-bleed">
-      <div class="stats-container section-padding">
-        <div class="stat-box">
-          <div class="stat-value">144+</div>
-          <div class="stat-label">Traffic Signs</div>
-        </div>
-        <div class="stat-box">
-          <div class="stat-value">5,280+</div>
-          <div class="stat-label">Students Trained</div>
-        </div>
-        <div class="stat-box">
-          <div class="stat-value">94%</div>
-          <div class="stat-label">Pass Rate</div>
-        </div>
-        <div class="stat-box">
-          <div class="stat-value">100%</div>
-          <div class="stat-label">Free</div>
-        </div>
-      </div>
-    </section>
 
-    <!-- Features - Bento Grid -->
-    <section class="features-section full-bleed">
-      <div class="section-padding">
-        <div class="section-header">
-          <h2>Everything You Need to Succeed</h2>
-          <p>Comprehensive tools and resources for your driving journey</p>
-        </div>
-        
-        <div class="bento-grid">
-          <div class="card feature-card bento-item-2">
-            <div class="feature-content">
-              <div class="feature-icon-large">📚</div>
-              <h3>Complete Sign Database</h3>
-              <p>Access all 144 official TRNC traffic signs with detailed English and Turkish descriptions</p>
-              <button class="btn btn-primary" @click="router.push('/study')">
-                Explore Signs
-              </button>
-            </div>
-          </div>
-          
-          <div class="card feature-card bento-item-1">
-            <div class="feature-icon">🎯</div>
-            <h3>Practice Tests</h3>
-            <p>Realistic exams tailored to your license type</p>
-          </div>
-          
-          <div class="card feature-card bento-item-1">
-            <div class="feature-icon">📊</div>
-            <h3>Progress Tracking</h3>
-            <p>Monitor your performance with detailed analytics</p>
-          </div>
-          
-          <div class="card feature-card bento-item-1">
-            <div class="feature-icon">⚡</div>
-            <h3>Instant Feedback</h3>
-            <p>Learn from mistakes with immediate results</p>
-          </div>
-          
-          <div class="card feature-card bento-item-1">
-            <div class="feature-icon">🌐</div>
-            <h3>Bilingual</h3>
-            <p>English interface with Turkish translations</p>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- License Types - Full Width Grid -->
     <section class="license-section full-bleed">
@@ -125,7 +58,7 @@ const router = useRouter();
           <p>Select the category that matches your goal</p>
         </div>
         
-        <div class="grid grid-4 license-grid">
+        <div class="grid grid-4 license-grid" style="max-width: 1200px; margin: 0 auto;">
           <div class="card license-card" @click="router.push('/quiz/A1')">
             <div class="license-icon">🏍️</div>
             <h3>A1 License</h3>
@@ -304,43 +237,7 @@ const router = useRouter();
   z-index: 4;
 }
 
-/* Stats Band */
-.stats-band {
-  background: var(--color-primary);  /* Dark ocean blue */
-  padding: 2.5rem 1.5rem;
-}
-
-.stats-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.stat-box {
-  text-align: center;
-  color: white;
-}
-
-.stat-value {
-  font-size: 3rem;
-  font-weight: 900;
-  line-height: 1;
-  margin-bottom: 0.5rem;
-}
-
-.stat-label {
-  font-size: 1.125rem;
-  opacity: 0.95;
-  font-weight: 500;
-}
-
-/* Features Section */
-.features-section {
-  padding: 3rem 1.5rem;
-  background: var(--color-bg-light);
-}
+/* License Section */
 
 .section-header {
   text-align: center;
@@ -359,42 +256,7 @@ const router = useRouter();
   color: var(--color-text-secondary);
 }
 
-.feature-card {
-  padding: 1.75rem;
-}
 
-.feature-content {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.feature-icon-large {
-  font-size: 3.5rem;
-  margin-bottom: 1.25rem;
-}
-
-.feature-icon {
-  font-size: 2.5rem;  
-  margin-bottom: 1.25rem;
-  display: block;
-}
-
-.feature-card h3 {
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
-}
-
-.feature-card p {
-  color: var(--color-text-secondary);
-  margin-bottom: 1.5rem;
-  flex-grow: 1;
-}
-
-.feature-card .btn {
-  margin-top: auto;
-  align-self: flex-start;
-}
 
 /* License Section */
 .license-section {
@@ -498,10 +360,7 @@ const router = useRouter();
     padding: 2rem 1.5rem;
   }
   
-  .stats-container {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-  }
+
 }
 
 @media (max-width: 640px) {
@@ -513,12 +372,6 @@ const router = useRouter();
     flex-direction: column;
   }
   
-  .stats-container {
-    grid-template-columns: 1fr;
-  }
-  
-  .stat-value {
-    font-size: 3rem;
-  }
+
 }
 </style>

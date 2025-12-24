@@ -11,7 +11,7 @@ const route = useRoute();
       <nav class="nav-container">
         <RouterLink to="/" class="logo">
           <span class="logo-icon"></span>
-          <span class="logo-text">TRNC Driving</span>
+          <span class="logo-text">Test2Drive</span>
         </RouterLink>
         <div class="nav-links">
           <RouterLink to="/" :class="{ active: route.path === '/' }">Home</RouterLink>
