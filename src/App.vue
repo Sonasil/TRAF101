@@ -25,6 +25,8 @@ const route = useRoute();
       <RouterView />
     </main>
 
+
+    
     <footer class="app-footer">
       <div class="footer-content">
         <div class="footer-section">
