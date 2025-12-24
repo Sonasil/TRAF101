@@ -62,14 +62,14 @@ const openTopic = (categoryId) => {
               <!-- Sign Previews -->
               <div class="signs-preview-grid">
                 <div 
-                  v-for="sign in category.signs.slice(0, 8)" 
+                  v-for="sign in category.signs.slice(0, 7)" 
                   :key="sign.id"
                   class="preview-item"
                 >
                   <img :src="sign.image" :alt="sign.name" loading="lazy" />
                 </div>
-                <div v-if="category.signs.length > 8" class="preview-more">
-                  +{{ category.signs.length - 8 }} more
+                <div v-if="category.signs.length > 7" class="preview-more">
+                  +{{ category.signs.length - 7 }} more
                 </div>
               </div>
             </div>
@@ -226,11 +226,12 @@ const openTopic = (categoryId) => {
   background: var(--color-bg);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
-  padding: 0.625rem;
+  padding: 0.75rem;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all var(--transition-base);
+  overflow: hidden;
 }
 
 .preview-item:hover {
@@ -239,8 +240,10 @@ const openTopic = (categoryId) => {
 }
 
 .preview-item img {
-  width: 100%;
-  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
   object-fit: contain;
 }
 

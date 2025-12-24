@@ -10,8 +10,7 @@ const route = useRoute();
     <header class="app-header">
       <nav class="nav-container">
         <RouterLink to="/" class="logo">
-          <span class="logo-icon"></span>
-          <span class="logo-text">Test2Drive</span>
+          <img src="/logo.png" alt="Test2Drive" class="logo-icon" />
         </RouterLink>
         <div class="nav-links">
           <RouterLink to="/" :class="{ active: route.path === '/' }">Home</RouterLink>
@@ -72,8 +71,9 @@ const route = useRoute();
 }
 
 .logo-icon {
-  font-size: 1.75rem;
-  filter: drop-shadow(0 2px 4px rgba(15, 76, 129, 0.2));
+  height: 32px;
+  width: auto;
+  display: block;
 }
 
 .logo-text {

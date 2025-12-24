@@ -159,6 +159,12 @@ const closeModal = () => {
   z-index: 0;
 }
 
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
 .header-wrapper {
   position: relative;
   z-index: 1;
@@ -202,7 +208,10 @@ const closeModal = () => {
 .hero-content {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .category-icon-wrapper {
@@ -263,7 +272,7 @@ const closeModal = () => {
 /* Signs Section */
 .signs-section {
   padding: var(--spacing-3xl) var(--spacing-md);
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
@@ -286,6 +295,8 @@ const closeModal = () => {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
   gap: var(--spacing-lg);
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .sign-card {
