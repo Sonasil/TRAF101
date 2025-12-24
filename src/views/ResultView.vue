@@ -75,9 +75,9 @@ const restart = () => {
 
 <style scoped>
 .result-container {
-  max-width: 800px;
+  max-width: 700px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1.5rem;
   width: 100%;
 }
 
@@ -86,26 +86,26 @@ const restart = () => {
   backdrop-filter: blur(10px);
   border: 1px solid var(--glass-border);
   border-radius: 20px;
-  padding: 3rem;
+  padding: 2rem;
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
 .score-card.passed { border-top: 5px solid var(--color-success); }
 .score-card.failed { border-top: 5px solid var(--color-danger); }
 
-.icon { font-size: 4rem; margin-bottom: 1rem; }
+.icon { font-size: 3rem; margin-bottom: 0.75rem; }
 .score-circle {
-  width: 150px;
-  height: 150px;
+  width: 130px;
+  height: 130px;
   border-radius: 50%;
-  border: 8px solid var(--color-bg-dim);
+  border: 6px solid var(--color-bg-dim);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 2rem auto;
+  margin: 1.5rem auto;
   font-weight: bold;
 }
 

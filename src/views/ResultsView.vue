@@ -80,7 +80,9 @@ function goHome() {
 
 <style scoped>
 .results-view {
-    padding: 2rem 0;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1.5rem;
 }
 .actions {
     display: flex;

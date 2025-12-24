@@ -55,16 +55,16 @@ import { RouterLink } from 'vue-router';
   background: white;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-2xl);
-  padding: var(--spacing-3xl);
+  padding: var(--spacing-xl);
   text-align: center;
   box-shadow: var(--shadow-lg);
-  max-width: 600px;
+  max-width: 550px;
   margin: 0 auto;
 }
 
 .empty-icon {
-  font-size: 5rem;
-  margin-bottom: var(--spacing-lg);
+  font-size: 3.5rem;
+  margin-bottom: var(--spacing-md);
   opacity: 0.6;
 }
 

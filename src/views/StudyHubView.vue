@@ -24,7 +24,7 @@ const openTopic = (categoryId) => {
   <div class="study-hub">
     <!-- Hero Header - Full Width -->
     <section class="hub-hero full-bleed bg-gradient-hero">
-      <div class="section-padding">
+      <div class="hero-container">
         <button class="back-btn" @click="router.push('/')">
           ← Back to Home
         </button>
@@ -95,20 +95,25 @@ const openTopic = (categoryId) => {
 /* Hero Section */
 .hub-hero {
   background: var(--gradient-hero);  /* Ocean blue gradient */
-  padding: 4rem 2rem 5rem;
+  padding: 1.5rem 1.5rem 2rem;
+}
+
+.hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .back-btn {
   background: rgba(255, 255, 255, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.3);
   color: white;
-  padding: 0.75rem 1.5rem;
+  padding: 0.625rem 1.125rem;
   border-radius: var(--radius-md);
-  font-size: 1rem;
+  font-size: 0.9375rem;
   font-weight: 600;
   cursor: pointer;
   transition: all var(--transition-base);
-  margin-bottom: 3rem;
+  margin-bottom: 1.5rem;
   backdrop-filter: blur(10px);
 }
 
@@ -118,33 +123,38 @@ const openTopic = (categoryId) => {
 }
 
 .hero-content h1 {
-  font-size: clamp(3rem, 6vw, 4.5rem);
-  margin-bottom: 1.25rem;
+  font-size: clamp(1.875rem, 4.5vw, 2.75rem);
+  margin-bottom: 0.75rem;
 }
 
 .hero-subtitle {
-  font-size: 1.3125rem;
+  font-size: 1rem;
   opacity: 0.95;
-  max-width: 700px;
-  line-height: 1.7;
+  max-width: 550px;
+  line-height: 1.5;
 }
 
 /* Categories Section */
 .categories-section {
-  padding: 5rem 2rem;
+  padding: 2.5rem 1.5rem;
   background: var(--color-bg-light);
 }
 
 .categories-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2.5rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .category-card {
   cursor: pointer;
   overflow: hidden;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .category-card:hover {
@@ -154,7 +164,7 @@ const openTopic = (categoryId) => {
 
 /* Category Header */
 .category-header {
-  padding: 2.5rem;
+  padding: 1.5rem;
   background: var(--gradient-primary);  /* Ocean blue gradient for all */
   color: white;
   display: flex;
@@ -165,17 +175,17 @@ const openTopic = (categoryId) => {
 }
 
 .category-icon {
-  font-size: 4.5rem;
+  font-size: 3rem;
   filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
   z-index: 1;
 }
 
 .category-count {
   background: rgba(255, 255, 255, 0.25);
-  padding: 0.625rem 1.25rem;
+  padding: 0.5rem 1rem;
   border-radius: 50px;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 0.875rem;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.3);
   z-index: 1;
@@ -183,26 +193,32 @@ const openTopic = (categoryId) => {
 
 /* Category Body */
 .category-body {
-  padding: 2.5rem;
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .category-body h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
   color: var(--color-text);
 }
 
 .category-body p {
   color: var(--color-text-secondary);
-  margin-bottom: 2rem;
-  line-height: 1.7;
+  margin-bottom: 1.25rem;
+  line-height: 1.6;
+  font-size: 0.9375rem;
+  min-height: 2.8em;
 }
 
 /* Sign Previews Grid */
 .signs-preview-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 0.75rem;
+  gap: 0.5rem;
+  margin-top: auto;
 }
 
 .preview-item {
@@ -242,7 +258,7 @@ const openTopic = (categoryId) => {
 
 /* Category Footer */
 .category-footer {
-  padding: 1.5rem 2.5rem;
+  padding: 1rem 1.5rem;
   background: var(--color-bg-light);
   border-top: 1px solid var(--color-border);
   display: flex;
@@ -294,8 +310,8 @@ const openTopic = (categoryId) => {
 /* Responsive */
 @media (max-width: 1024px) {
   .categories-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
   }
   
   .signs-preview-grid {
@@ -322,6 +338,10 @@ const openTopic = (categoryId) => {
   
   .signs-preview-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .categories-grid {
+    grid-template-columns: 1fr;
   }
 }
 </style>

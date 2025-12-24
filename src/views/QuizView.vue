@@ -62,9 +62,9 @@ const handleOptionSelect = (optionId) => {
 
 <style scoped>
 .quiz-container {
-  max-width: 800px;
+  max-width: 750px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1.5rem;
   width: 100%;
 }
 
@@ -103,7 +103,7 @@ const handleOptionSelect = (optionId) => {
   background: white;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-xl);
-  padding: 3rem;
+  padding: 2rem;
   box-shadow: var(--shadow-lg);
   animation: slideUp 0.5s ease;
 }
@@ -118,9 +118,9 @@ const handleOptionSelect = (optionId) => {
 }
 
 .question-text {
-  font-size: 1.6rem;
-  margin-bottom: 2rem;
-  line-height: 1.4;
+  font-size: 1.375rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
 }
 
 .options-grid {
@@ -132,10 +132,10 @@ const handleOptionSelect = (optionId) => {
 .option-btn {
   background: var(--color-bg-secondary);
   border: 2px solid var(--color-border);
-  padding: 1.5rem;
+  padding: 1.125rem;
   border-radius: var(--radius-lg);
   text-align: left;
-  font-size: 1.125rem;
+  font-size: 1rem;
   cursor: pointer;
   transition: all var(--transition-base);
   color: var(--color-text);

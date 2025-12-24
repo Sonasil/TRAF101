@@ -65,11 +65,11 @@
   /* Spacing */
   --spacing-xs: 0.25rem;
   --spacing-sm: 0.5rem;
-  --spacing-md: 1rem;
-  --spacing-lg: 1.5rem;
-  --spacing-xl: 2rem;
-  --spacing-2xl: 3rem;
-  --spacing-3xl: 4rem;
+  --spacing-md: 0.75rem;
+  --spacing-lg: 1rem;
+  --spacing-xl: 1.5rem;
+  --spacing-2xl: 2rem;
+  --spacing-3xl: 2.5rem;
 
   /* Additional Color Variables */
   --color-bg-light: #FFFFFF;
@@ -145,17 +145,17 @@ h6 {
 }
 
 h1 {
-  font-size: clamp(3rem, 7vw, 5.5rem);
-  letter-spacing: -0.03em;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  letter-spacing: -0.02em;
 }
 
 h2 {
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: clamp(2rem, 4vw, 3rem);
   letter-spacing: -0.02em;
 }
 
 h3 {
-  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
   font-weight: 700;
 }
 
@@ -221,6 +221,7 @@ p {
   background: white;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-xl);
+  padding: var(--spacing-xl);
   transition: all var(--transition-base);
 }
 

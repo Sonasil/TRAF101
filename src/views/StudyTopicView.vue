@@ -37,19 +37,31 @@ const closeModal = () => {
 
 <template>
   <div class="study-topic">
-    <!-- Header -->
+    <!-- Modern Hero Header -->
     <header v-if="category" class="topic-header">
+      <div class="header-background"></div>
       <div class="container">
-        <button class="back-btn" @click="router.back()">
-          ← Back
-        </button>
-        <div class="header-content animate-fadeInDown">
-          <div class="header-top">
-            <div class="category-icon-large">{{ category.icon }}</div>
-            <div class="category-badge">{{ category.signs.length }} signs</div>
+        <div class="header-wrapper">
+          <button class="back-btn" @click="router.back()">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Back
+          </button>
+          
+          <div class="hero-content">
+            <div class="category-icon-wrapper">
+              <div class="category-icon-large">{{ category.icon }}</div>
+            </div>
+            
+            <div class="text-content">
+              <div class="category-meta">
+                <span class="category-badge">{{ category.signs.length }} Traffic Signs</span>
+              </div>
+              <h1>{{ category.name }}</h1>
+              <p class="header-description">{{ category.description }}</p>
+            </div>
           </div>
-          <h1>{{ category.name }}</h1>
-          <p class="header-description">{{ category.description }}</p>
         </div>
       </div>
     </header>
@@ -128,85 +140,131 @@ const closeModal = () => {
   background: var(--color-bg);  /* Fixed - use defined variable */
 }
 
-/* Header */
+/* Modern Hero Header */
 .topic-header {
-  background: var(--gradient-hero);  /* Ocean blue gradient */
-  color: white;
-  padding: 3rem 2rem;  /* Fixed padding */
-  box-shadow: var(--shadow-xl);
   position: relative;
+  background: white;
+  padding: 2rem 1.5rem 3rem;
   overflow: hidden;
 }
 
-.topic-header::before {
-  content: '';
+.header-background {
   position: absolute;
-  top: -50%;
-  right: -30%;
-  width: 100%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
-  animation: pulse 4s ease-in-out infinite;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60%;
+  background: var(--gradient-hero);
+  opacity: 0.03;
+  z-index: 0;
 }
 
-.back-btn {
-  background: rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: var(--radius-lg);
-  font-weight: 600;
-  cursor: pointer;
-  margin-bottom: 1rem;
-  backdrop-filter: blur(10px);
-  transition: all var(--transition-base);
-}
-
-.back-btn:hover {
-  background: rgba(255, 255, 255, 0.3);
-}
-
-.header-content {
+.header-wrapper {
   position: relative;
   z-index: 1;
 }
 
-.header-top {
+/* Modern Back Button */
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: white;
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  padding: 0.625rem 1.125rem;
+  border-radius: var(--radius-lg);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  cursor: pointer;
+  margin-bottom: 2rem;
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-sm);
+}
+
+.back-btn:hover {
+  background: var(--color-bg-secondary);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  transform: translateX(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.back-btn svg {
+  transition: transform var(--transition-base);
+}
+
+.back-btn:hover svg {
+  transform: translateX(-2px);
+}
+
+/* Hero Content Layout */
+.hero-content {
   display: flex;
   align-items: center;
-  gap: var(--spacing-lg);
-  margin-bottom: var(--spacing-lg);
+  gap: 2rem;
+}
+
+.category-icon-wrapper {
+  flex-shrink: 0;
 }
 
 .category-icon-large {
   font-size: 5rem;
-  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(15, 76, 129, 0.05) 0%, rgba(30, 136, 229, 0.08) 100%);
+  border-radius: var(--radius-2xl);
+  border: 2px solid rgba(15, 76, 129, 0.1);
+  box-shadow: 0 4px 20px rgba(15, 76, 129, 0.08);
+}
+
+.text-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.category-meta {
+  margin-bottom: 0.75rem;
 }
 
 .category-badge {
-  background: rgba(255, 255, 255, 0.2);
-  padding: var(--spacing-sm) var(--spacing-lg);
+  display: inline-flex;
+  align-items: center;
+  background: var(--gradient-primary);
+  color: white;
+  padding: 0.5rem 1rem;
   border-radius: var(--radius-full);
-  font-weight: 600;
-  backdrop-filter: blur(10px);
+  font-weight: 700;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 0 2px 8px rgba(15, 76, 129, 0.25);
 }
 
 .topic-header h1 {
-  font-size: clamp(2.5rem, 5vw, 3.5rem);  /* Fixed - use clamp */  
-  margin-bottom: 1rem;
-  color: white;
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 0.75rem;
+  color: var(--color-text);
+  font-weight: 800;
+  line-height: 1.2;
 }
 
 .header-description {
-  font-size: 1.125rem;  /* Fixed size */
-  opacity: 0.9;
-  max-width: 700px;
+  font-size: 1.0625rem;
+  color: var(--color-text-secondary);
   line-height: 1.6;
+  max-width: 700px;
 }
 
 /* Signs Section */
 .signs-section {
-  padding: var(--spacing-3xl) 0;
+  padding: var(--spacing-3xl) var(--spacing-md);
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .section-header {
@@ -226,14 +284,14 @@ const closeModal = () => {
 
 .signs-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: var(--spacing-xl);
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: var(--spacing-lg);
 }
 
 .sign-card {
   background: white;
   border-radius: var(--radius-xl);
-  padding: var(--spacing-lg);
+  padding: var(--spacing-md);
   cursor: pointer;
   transition: all var(--transition-base);
   border: 2px solid transparent;
@@ -302,7 +360,7 @@ const closeModal = () => {
 .modal-content {
   background: white;
   border-radius: var(--radius-2xl);
-  max-width: 600px;
+  max-width: 550px;
   width: 100%;
   max-height: 90vh;
   overflow-y: auto;
@@ -333,7 +391,7 @@ const closeModal = () => {
 
 .modal-image {
   background: var(--color-bg-secondary);
-  padding: var(--spacing-3xl);
+  padding: var(--spacing-xl);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -347,7 +405,7 @@ const closeModal = () => {
 }
 
 .modal-body {
-  padding: var(--spacing-2xl);
+  padding: var(--spacing-xl);
 }
 
 .modal-body h2 {
@@ -438,6 +496,18 @@ const closeModal = () => {
   
   .category-icon-large {
     font-size: 3rem;
+    width: 80px;
+    height: 80px;
+  }
+  
+  .hero-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+  
+  .category-icon-wrapper {
+    align-self: center;
   }
 }
 </style>

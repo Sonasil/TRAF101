@@ -35,11 +35,11 @@ const passClass = computed(() => props.results.passed ? 'pass' : 'fail');
 
 .score-card {
   text-align: center;
-  padding: 2rem;
+  padding: 1.5rem;
   border-radius: 16px;
   background: #f8f9fa;
   width: 100%;
-  max-width: 400px;
+  max-width: 350px;
   border: 4px solid transparent;
 }
 
@@ -56,7 +56,7 @@ const passClass = computed(() => props.results.passed ? 'pass' : 'fail');
 }
 
 h1 {
-  font-size: 4rem;
+  font-size: 3rem;
   margin: 0;
   line-height: 1;
 }

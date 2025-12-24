@@ -198,8 +198,8 @@ const router = useRouter();
 .hero-split {
   background: var(--gradient-hero);  /* Ocean blue gradient */
   color: white;
-  padding: 6rem 2rem 4rem;
-  min-height: 90vh;
+  padding: 4rem 1.5rem 3rem;
+  min-height: 80vh;
   display: flex;
   align-items: center;
 }
@@ -209,7 +209,8 @@ const router = useRouter();
   grid-template-columns: 1.2fr 0.8fr;
   gap: 2rem;
   align-items: center;
-  max-width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .hero-badge {
@@ -306,13 +307,15 @@ const router = useRouter();
 /* Stats Band */
 .stats-band {
   background: var(--color-primary);  /* Dark ocean blue */
-  padding: 4rem 2rem;
+  padding: 2.5rem 1.5rem;
 }
 
 .stats-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 3rem;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .stat-box {
@@ -321,10 +324,10 @@ const router = useRouter();
 }
 
 .stat-value {
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 900;
   line-height: 1;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
 }
 
 .stat-label {
@@ -335,13 +338,13 @@ const router = useRouter();
 
 /* Features Section */
 .features-section {
-  padding: 6rem 2rem;
+  padding: 3rem 1.5rem;
   background: var(--color-bg-light);
 }
 
 .section-header {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 2.5rem;
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
@@ -357,7 +360,7 @@ const router = useRouter();
 }
 
 .feature-card {
-  padding: 2.5rem;
+  padding: 1.75rem;
 }
 
 .feature-content {
@@ -367,13 +370,13 @@ const router = useRouter();
 }
 
 .feature-icon-large {
-  font-size: 5rem;
-  margin-bottom: 1.5rem;
+  font-size: 3.5rem;
+  margin-bottom: 1.25rem;
 }
 
 .feature-icon {
-  font-size: 3.5rem;  
-  margin-bottom: 1.5rem;
+  font-size: 2.5rem;  
+  margin-bottom: 1.25rem;
   display: block;
 }
 
@@ -395,12 +398,12 @@ const router = useRouter();
 
 /* License Section */
 .license-section {
-  padding: 6rem 2rem;
+  padding: 3rem 1.5rem;
   background: white;
 }
 
 .license-card {
-  padding: 3rem 2rem;
+  padding: 2rem 1.5rem;
   text-align: center;
   cursor: pointer;
   position: relative;
@@ -426,8 +429,8 @@ const router = useRouter();
 }
 
 .license-icon {
-  font-size: 5rem;
-  margin-bottom: 1.5rem;
+  font-size: 3.5rem;
+  margin-bottom: 1.25rem;
 }
 
 .license-card h3 {
@@ -456,7 +459,7 @@ const router = useRouter();
 
 /* CTA Section */
 .cta-section {
-  padding: 6rem 2rem;
+  padding: 3rem 1.5rem;
 }
 
 .cta-content {
